@@ -1,0 +1,26 @@
+.background-login {
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+}
+
+.ilustracao {
+  flex-grow: 2.2;
+  background-image: url('../../../assets/ilustracao-login.png');
+
+}
+
+.form-login {
+  padding: 10% 5% 0% 5%;
+  flex-grow: 0.8;
+  background-color: #faf8fd;
+}
+
+.login-container {
+  width: 80%;
+}
+
+.cmp-login {
+  width: 100%;
+}
+

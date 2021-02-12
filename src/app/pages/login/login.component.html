@@ -1,1 +1,44 @@
-<p>login works!</p>
+<div class="background-login">
+
+  <div class="ilustracao">
+
+  </div>
+
+  <div class="form-login">
+
+    <form [formGroup]="form" class="login-container">
+
+      <h1 style="text-align: center;">Bem Vindo a Focus Sua <br>Loja Virtual </h1>
+
+      <mat-card class="login">
+        <mat-card-header>
+            <mat-card-title>Acesso Restrito</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+            <p>
+              <mat-form-field [appearance]="'fill'" class="cmp-login">
+                <mat-label>E-mail</mat-label>
+                <input matInput formControlName="email" required placeholder="seunome@examplo.com" type="text">
+                <mat-error>Email obrigatório</mat-error>
+              </mat-form-field>
+            </p>
+
+            <p>
+              <mat-form-field [appearance]="'fill'" class="cmp-login">
+                <mat-label>Senha</mat-label>
+                <input matInput type="password" formControlName="senha" required>
+                <mat-error>Senha obrigatória</mat-error>
+              </mat-form-field>
+            </p>
+
+        </mat-card-content>
+        <mat-card-actions align="end">
+            <button color="primary" mat-button>Entrar</button>
+        </mat-card-actions>
+      </mat-card>
+    </form>
+  </div>
+</div>
+
+
+
