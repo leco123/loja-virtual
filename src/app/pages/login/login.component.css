@@ -16,6 +16,11 @@
   background-color: #faf8fd;
 }
 
+.login {
+  background-color: #faf8fd;
+  box-shadow: none;
+}
+
 .login-container {
   width: 80%;
 }
