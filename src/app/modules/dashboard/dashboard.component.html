@@ -64,8 +64,10 @@
   <div class="pedidos-aguardando-aprovacao">
     <mat-card>
       <mat-card-header>
-        <mat-card-title>Pedidos Aguardando Aprovação</mat-card-title>
-        <mat-card-subtitle>subtitle</mat-card-subtitle>
+        <mat-card-title>
+          <mat-icon aria-hidden="false" aria-label="Pedidos Aguardando Aprovação ">published_with_changes</mat-icon>
+          Pedidos Aguardando Aprovação
+        </mat-card-title>
       </mat-card-header>
       <mat-card-content>
         <div class="lista-produto">
@@ -96,8 +98,10 @@
   <div class="pedidos-aceitos">
     <mat-card>
       <mat-card-header>
-        <mat-card-title>Pedidos Aceitos</mat-card-title>
-        <mat-card-subtitle>subtitle</mat-card-subtitle>
+        <mat-card-title>
+
+          Pedidos Aceitos
+        </mat-card-title>
       </mat-card-header>
       <mat-card-content>
 
@@ -109,22 +113,26 @@
 
   </div>
 
-  <div class="pedidos-devolucao">
+  <div class="pedidos-chat">
     <mat-card>
       <mat-card-header>
-        <mat-card-title>Atendimentos</mat-card-title>
-        <mat-card-subtitle>subtitle</mat-card-subtitle>
+        <mat-card-title>
+          <mat-icon aria-hidden="false" aria-label="Chat">chat</mat-icon>
+          Chat Atendimento
+        </mat-card-title>
       </mat-card-header>
       <mat-card-content>
         <mat-list>
-          <mat-list-item *ngFor="let message of messages">
-            <img matListAvatar src="../../../assets/avatar-masculino.png" alt="{{message.from}}">
-            <h3 matLine> {{message.from}} </h3>
-            <p matLine>
-              <span> {{message.subject}} </span>
-              <span class="demo-2"> -- {{message.content}} </span>
-            </p>
-          </mat-list-item>
+          <div class="lista-mensagens">
+            <mat-list-item *ngFor="let message of messages">
+              <img matListAvatar src="../../../assets/avatar-masculino.png" alt="{{message.from}}">
+              <h3 matLine> <strong>{{message.from}}</strong> </h3>
+              <p matLine>
+                <span> {{message.subject}} </span>
+                <span class="demo-2"> -- {{message.content}} </span>
+              </p>
+            </mat-list-item>
+          </div>
         </mat-list>
       </mat-card-content>
     </mat-card>

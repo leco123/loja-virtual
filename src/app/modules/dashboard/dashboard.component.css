@@ -118,12 +118,20 @@ tr.mat-footer-row {
   border-top: 1px solid #e0e0e0;
 }
 
-
 .pedidos-aceitos {
-  flex-grow: 2;
+  flex-grow: 1;
   padding-right: 1%;
 }
 
-.pedidos-devolucao {
-  flex-grow: 1;
+.pedidos-chat {
+  flex-grow: 0.5;
+}
+.lista-mensagens {
+  max-height: 280px;
+  overflow: auto;
+}
+
+mat-card-title {
+  display: flex;
+  justify-content: flex-start;
 }
