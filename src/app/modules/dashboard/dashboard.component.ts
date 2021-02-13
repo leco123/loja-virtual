@@ -1,0 +1,48 @@
+import { Component, OnInit } from '@angular/core';
+
+export interface Transaction {
+  item: string;
+  cost: number;
+}
+
+export interface Mensagem {
+  from?:string;
+  subject?:string;
+  content?:string;
+}
+
+@Component({
+  selector: 'app-dashboard',
+  templateUrl: './dashboard.component.html',
+  styleUrls: ['./dashboard.component.css']
+})
+export class DashboardComponent implements OnInit {
+
+  displayedColumns = ['item', 'cost'];
+  transactions: Transaction[] = [
+    {item: 'Beach ball', cost: 4},
+    {item: 'Towel', cost: 5},
+    {item: 'Frisbee', cost: 2},
+    {item: 'Sunscreen', cost: 4},
+    {item: 'Cooler', cost: 25},
+    {item: 'Swim suit', cost: 15},
+  ];
+
+  messages: Mensagem[]=[
+    {from: 'Alex de Carvalho', subject: 'Texto de teste', content: 'aqui vai a descrição do conteúdo..'},
+    {from: 'Alex de Carvalho', subject: 'Texto de teste', content: 'aqui vai a descrição do conteúdo..'},
+    {from: 'Alex de Carvalho', subject: 'Texto de teste', content: 'aqui vai a descrição do conteúdo..'},
+    {from: 'Alex de Carvalho', subject: 'Texto de teste', content: 'aqui vai a descrição do conteúdo..'}
+  ]
+
+  /** Gets the total cost of all transactions. */
+  getTotalCost() {
+    return this.transactions.map(t => t.cost).reduce((acc, value) => acc + value, 0);
+  }
+
+  constructor() { }
+
+  ngOnInit(): void {
+  }
+
+}

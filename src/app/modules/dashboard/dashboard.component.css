@@ -1,0 +1,129 @@
+.contador {
+  display: flex;
+  margin-top: 3%;
+  padding: 1%;
+}
+
+.contador-item-vendas {
+  width: 25%;
+  background-color: #877fff;
+  margin: 1%;
+  padding: 1%;
+  box-shadow: 0px 0px 3px 0px #877fff;
+}
+
+.contador-item-compras {
+  width: 25%;
+  background-color: #b67fff;
+  margin: 1%;
+  padding: 1%;
+  box-shadow: 0px 0px 3px 0px #b67fff;
+}
+
+.contador-item-devolucoes {
+  width: 25%;
+  background-color: #ff7f7f;
+  margin: 1%;
+  padding: 1%;
+  box-shadow: 0px 0px 3px 0px #ff7f7f;
+}
+
+.contador-item-pedidos {
+  width: 25%;
+  background-color: #87f373;
+  margin: 1%;
+  padding: 1%;
+  box-shadow: 0px 0px 3px 0px #87f373;
+}
+
+.header {
+  font-size: 18px;
+  font-weight: 400;
+  color: #FFFFFF;
+}
+
+.flex-container {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  display: flex;
+}
+
+.space-between {
+  justify-content: space-between;
+}
+
+.flex-item {
+    width: 122px;
+    line-height: 50px;
+    color: #f6f6f6;
+    font-weight: 300;
+    font-size: 18px;
+    text-align: left;
+}
+
+.info-descricao {
+  display: flex;
+}
+
+.info-descricao-item {
+  justify-content: flex-start;
+  color: #FFFFFF;
+  font-weight: 100;
+  font-size: 12px;
+  margin-right: 2%;
+}
+
+.destaque-mais {
+  font-weight: 300;
+  color: cyan;
+}
+
+.destaque-menos {
+  font-weight: 300;
+  color: crimson;
+}
+
+.destaque-padrao {
+  font-weight: 300;
+  color: #ffffff;
+}
+
+.pedidos {
+  margin-top: 1.5%;
+  padding: 1.5%;
+  display: flex;
+  flex-direction: row;
+}
+
+.pedidos-aguardando-aprovacao {
+  flex-grow: 0.6;
+  padding-right: 1%;
+}
+
+.lista-produto {
+  max-height: 280px;
+  overflow:auto;
+}
+
+table {
+  width: 100%;
+}
+
+tr.mat-footer-row {
+  font-weight: bold;
+}
+
+.mat-table-sticky {
+  border-top: 1px solid #e0e0e0;
+}
+
+
+.pedidos-aceitos {
+  flex-grow: 2;
+  padding-right: 1%;
+}
+
+.pedidos-devolucao {
+  flex-grow: 1;
+}
