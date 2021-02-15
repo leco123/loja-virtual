@@ -65,7 +65,7 @@
     <mat-card>
       <mat-card-header>
         <mat-card-title>
-          <mat-icon aria-hidden="false" aria-label="Pedidos Aguardando Aprovação ">published_with_changes</mat-icon>
+          <mat-icon aria-hidden="false" aria-label="Pedidos Aguardando Aprovação ">shopping_basket</mat-icon>
           Pedidos Aguardando Aprovação
         </mat-card-title>
       </mat-card-header>
@@ -99,16 +99,31 @@
     <mat-card>
       <mat-card-header>
         <mat-card-title>
-
+          <mat-icon aria-hidden="false" aria-label="Pedidos Aceitos ">published_with_changes</mat-icon>
           Pedidos Aceitos
         </mat-card-title>
       </mat-card-header>
       <mat-card-content>
+        <div class="lista-pedidos-aceitos">
+          <table matSort (matSortChange)="sortData($event)">
+            <tr>
+              <th mat-sort-header="name">Dessert (100g)</th>
+              <th mat-sort-header="calories">Calories</th>
+              <th mat-sort-header="fat">Fat (g)</th>
+              <th mat-sort-header="carbs">Carbs (g)</th>
+              <th mat-sort-header="protein">Protein (g)</th>
+            </tr>
 
+            <tr *ngFor="let dessert of sortedData">
+              <td>{{dessert.name}}</td>
+              <td>{{dessert.calories}}</td>
+              <td>{{dessert.fat}}</td>
+              <td>{{dessert.carbs}}</td>
+              <td>{{dessert.protein}}</td>
+            </tr>
+          </table>
+        </div>
       </mat-card-content>
-      <mat-card-actions>
-        <button mat-button>Ok</button>
-      </mat-card-actions>
     </mat-card>
 
   </div>
@@ -125,11 +140,11 @@
         <mat-list>
           <div class="lista-mensagens">
             <mat-list-item *ngFor="let message of messages">
-              <img matListAvatar src="../../../assets/avatar-masculino.png" alt="{{message.from}}">
-              <h3 matLine> <strong>{{message.from}}</strong> </h3>
+              <img matListAvatar class="chat-img" src="../../../assets/avatar-masculino.png" alt="{{message.from}}">
+              <p matLine class="chat-nome"> {{message.from}} </p>
               <p matLine>
-                <span> {{message.subject}} </span>
-                <span class="demo-2"> -- {{message.content}} </span>
+                <span class="chat-subject"> {{message.subject}} </span>
+                <span class="chat-mensagem"> - {{message.content}} </span>
               </p>
             </mat-list-item>
           </div>

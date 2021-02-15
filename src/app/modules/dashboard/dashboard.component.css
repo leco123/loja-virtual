@@ -101,7 +101,11 @@
 }
 
 .lista-produto {
-  max-height: 280px;
+  max-height: 272px;
+  overflow:auto;
+}
+.lista-pedidos-aceitos {
+  max-height: 288px;
   overflow:auto;
 }
 
@@ -122,8 +126,10 @@ tr.mat-footer-row {
   padding-right: 1%;
 }
 
+/* CHAT */
 .pedidos-chat {
   flex-grow: 0.5;
+  width: 26%;
 }
 .lista-mensagens {
   max-height: 280px;
@@ -133,4 +139,28 @@ tr.mat-footer-row {
 mat-card-title {
   display: flex;
   justify-content: flex-start;
+}
+
+.chat-img {
+  width: 30px!important;
+  height: 30px!important;
+}
+
+.chat-nome {
+  font-size: 0.7em!important;
+  font-weight: 400!important;
+}
+
+.chat-subject {
+  font-size: 0.7em!important;
+  font-weight: 200!important;
+}
+
+.chat-mensagem {
+  font-size: 0.7em!important;
+  font-weight: 200!important;
+}
+
+.mat-sort-header-container {
+  align-items: center;
 }
