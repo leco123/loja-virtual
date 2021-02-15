@@ -1,0 +1,43 @@
+.tela{
+  width: 100%;
+  max-width: 800px;
+  margin: 16px auto;
+}
+
+mat-card-actions{
+  padding: 0!important;
+}
+
+.no-margin{
+  margin: 0!important;
+}
+
+.grid-telefones{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 16px;
+}
+
+.endereco{
+  margin: 16px 0;
+  padding: 16px;
+  padding-top: 28px;
+  border: 1px solid #dcdcdc;
+  border-radius: 4px;
+  position: relative;
+}
+
+.endereco-title{
+  position: absolute;
+  left: 16px;
+  height: 32px;
+  padding: 0 16px;
+  border: 1px solid #dcdcdc;
+  background-color: white;
+  top: -16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 4px;
+  font-size: 10pt;
+}

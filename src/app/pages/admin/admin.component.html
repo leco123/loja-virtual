@@ -1,1 +1,67 @@
-<p>admin works!</p>
+<div class="main">
+  <mat-toolbar color="primary">
+      <button (click)="drawer.toggle()" class="menu-btn" mat-icon-button>
+          <mat-icon>menu</mat-icon>
+      </button>
+      <span>SG-Loja Virtual</span>
+      <span class="barra-espaco"></span>
+      <button mat-button [matMenuTriggerFor]="menu">
+        <mat-icon>account_circle</mat-icon> Minha Conta - Alex de Carvalho
+      </button>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item>
+          <mat-icon>dialpad</mat-icon>
+          <span>Redial</span>
+        </button>
+        <button mat-menu-item disabled>
+          <mat-icon>voicemail</mat-icon>
+          <span>Check voice mail</span>
+        </button>
+        <button mat-menu-item>
+          <mat-icon>notifications_off</mat-icon>
+          <span>Disable alerts</span>
+        </button>
+      </mat-menu>
+  </mat-toolbar>
+
+
+  <mat-drawer-container class="main-content">
+      <mat-drawer [opened]="true" mode="side" class="menu" #drawer>
+          <mat-nav-list>
+              <mat-list-item>
+                <a matLine class="link" [routerLink]="['/admin/dashboard']" routerLinkActive="link-activated">
+                    <mat-icon>home</mat-icon>
+                    <span>Dashboard</span>
+                </a>
+              </mat-list-item>
+              <mat-list-item>
+                  <a matLine class="link" [routerLink]="['/admin/pessoa']" routerLinkActive="link-activated">
+                      <mat-icon>person</mat-icon>
+                      <span>Pessoa</span>
+                  </a>
+              </mat-list-item>
+              <mat-list-item>
+                  <a matLine class="link" [routerLink]="['/admin/empresa']" routerLinkActive="link-activated">
+                      <mat-icon>account_balance</mat-icon>
+                      <span>Empresa</span>
+                  </a>
+              </mat-list-item>
+              <mat-list-item>
+                  <a matLine class="link" [routerLink]="['/admin/formulario']" routerLinkActive="link-activated">
+                      <mat-icon>assignment</mat-icon>
+                      <span>Formulário</span>
+                  </a>
+              </mat-list-item>
+              <mat-list-item>
+                  <a matLine class="link" [routerLink]="['/admin/gerador-avatar']" routerLinkActive="link-activated">
+                      <mat-icon>person_pin</mat-icon>
+                      <span>Gerador de avatar</span>
+                  </a>
+              </mat-list-item>
+          </mat-nav-list>
+      </mat-drawer>
+      <mat-drawer-content>
+          <router-outlet></router-outlet>
+      </mat-drawer-content>
+  </mat-drawer-container>
+</div>

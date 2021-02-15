@@ -28,4 +28,10 @@
 .cmp-login {
   width: 100%;
 }
+.recuperar-senha {
+  cursor: pointer;
+  font-size: 0.9em;
+  margin-left: 5%;
+  color: #fe88a9;
+}
 
