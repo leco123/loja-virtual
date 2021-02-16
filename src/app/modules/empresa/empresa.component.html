@@ -47,18 +47,13 @@
       <mat-card-title>Contatos</mat-card-title>
     </mat-card-header>
     <mat-card-content>
-      <div fxLayoutAlign="start center" fxLayoutGap="16px" fxLayout="row">
-        <mat-card-subtitle class="no-margin">Telefones</mat-card-subtitle>
-        <button (click)="novoTelefone()" mat-icon-button>
-            <mat-icon>add</mat-icon>
-        </button>
-      </div>
 
       <div fxLayout="column" formArrayName="telefones">
         <div class="grid-telefones">
           <div class="" *ngFor="let control of telefones.controls;index as i" >
+            <mat-card-subtitle class="card-subtitle" *ngIf="i > 0">Telefone {{i+1}}</mat-card-subtitle>
             <mat-form-field [appearance]="'outline'">
-              <mat-label>Telefone</mat-label>
+              <mat-label>Telefone </mat-label>
               <input matInput type="text" formControlName="{{i}}">
             </mat-form-field>
             <mat-form-field [appearance]="'outline'">
@@ -78,6 +73,13 @@
             </mat-form-field>
           </div>
         </div>
+
+        <div fxLayoutAlign="end center" fxLayoutGap="16px" fxLayout="row">
+          <mat-card-subtitle class="no-margin">Telefone</mat-card-subtitle>
+          <button (click)="novoTelefone()" mat-icon-button>
+              <mat-icon>add</mat-icon>
+          </button>
+        </div>
     </div>
     </mat-card-content>
   </mat-card>
@@ -87,16 +89,11 @@
       <mat-card-title>Endereços</mat-card-title>
     </mat-card-header>
     <mat-card-content>
-      <!--BOTÃO DE ADICIONAR ENDEREÇO-->
-      <div fxLayoutAlign="start center" fxLayoutGap="16px" fxLayout="row">
-        <mat-card-subtitle class="no-margin">Enderecos</mat-card-subtitle>
-        <button (click)="novoEndereco()" mat-icon-button>
-            <mat-icon>add</mat-icon>
-        </button>
-      </div>
+
       <!--CAMPOS DE ENDEREÇO-->
       <div fxLayout="column" formArrayName="enderecos">
         <div *ngFor="let formEndereco of enderecos.controls;index as i" class="endereco" formGroupName="{{i}}">
+            <mat-card-subtitle class="card-subtitle" *ngIf="i > 0">Endereço {{i+1}}</mat-card-subtitle>
             <div fxLayout="row" fxLayoutGap="16px">
                 <mat-form-field fxFlex [appearance]="'outline'">
                     <mat-label>Cidade</mat-label>
@@ -131,7 +128,15 @@
                 </mat-form-field>
             </div>
         </div>
-    </div>
+      </div>
+
+      <!--BOTÃO DE ADICIONAR ENDEREÇO-->
+      <div fxLayoutAlign="end center" fxLayoutGap="16px" fxLayout="row">
+        <mat-card-subtitle class="no-margin">Endereço</mat-card-subtitle>
+        <button (click)="novoEndereco()" mat-icon-button>
+            <mat-icon>add</mat-icon>
+        </button>
+      </div>
     </mat-card-content>
   </mat-card>
   <!--INSCRIÇÕES-->

@@ -1,117 +1,143 @@
-<mat-card [formGroup]="form" class="tela">
-  <mat-card-header>
-      <mat-card-title>Minha Conta</mat-card-title>
-  </mat-card-header>
-  <mat-card-content>
-      <div fxLayout="column" fxLayoutGap="16px">
-          <div fxLayout="row" fxLayoutGap="16px">
-              <mat-form-field fxFlex [appearance]="'outline'">
-                  <mat-label>Nome</mat-label>
-                  <input matInput type="text" formControlName="nome">
-                  <mat-error>Campo obrigatório</mat-error>
-              </mat-form-field>
+<div [formGroup]="form"  class="conteudo tela">
+  <!--DADOS PESSOAIS-->
+  <mat-card class="card-form">
+    <mat-card-header>
+      <mat-card-title>Dados Pessoais</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <div fxLayout="row" fxLayoutGap="16px">
+          <mat-form-field fxFlex [appearance]="'outline'">
+              <mat-label>Nome</mat-label>
+              <input matInput type="text" formControlName="nome">
+              <mat-error>Campo obrigatório</mat-error>
+          </mat-form-field>
 
-              <mat-form-field [appearance]="'outline'">
-                  <mat-label>Idade</mat-label>
-                  <input matInput type="text" formControlName="idade">
-                  <mat-error>Campo obrigatório</mat-error>
+          <mat-form-field [appearance]="'outline'">
+              <mat-label>Idade</mat-label>
+              <input matInput type="text" formControlName="idade">
+              <mat-error>Campo obrigatório</mat-error>
+          </mat-form-field>
+      </div>
+
+      <div fxLayout="row" fxLayoutGap="16px">
+          <mat-form-field fxFlex [appearance]="'outline'">
+              <mat-label>Cabelo</mat-label>
+              <input matInput type="text" formControlName="cabelo">
+              <mat-error>Campo obrigatório</mat-error>
+          </mat-form-field>
+
+          <mat-form-field fxFlex [appearance]="'outline'">
+              <mat-label>Olho</mat-label>
+              <input matInput type="text" formControlName="olho">
+              <mat-error>Campo obrigatório</mat-error>
+          </mat-form-field>
+      </div>
+    </mat-card-content>
+  </mat-card>
+  <!--DADOS DE ACESSO RESTRITO-->
+  <mat-card class="card-form">
+    <mat-card-header>
+      <mat-card-title>Dados de Acesso Restrito</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <div formGroupName="login" fxLayoutGap="16px">
+        <mat-form-field fxFlex [appearance]="'outline'">
+            <mat-label>Email</mat-label>
+            <input matInput email type="text" formControlName="email">
+            <mat-error>E-mail inválido</mat-error>
+        </mat-form-field>
+
+        <mat-form-field fxFlex [appearance]="'outline'">
+            <mat-label>Senha</mat-label>
+            <input matInput type="password" formControlName="senha">
+            <mat-error>Campo obrigatório</mat-error>
+        </mat-form-field>
+      </div>
+    </mat-card-content>
+  </mat-card>
+  <!--TELEFONES-->
+  <mat-card class="card-form">
+    <mat-card-header>
+      <mat-card-title>Telefones</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+
+
+      <div fxLayout="column" formArrayName="telefones">
+          <div class="grid-telefones">
+              <mat-form-field *ngFor="let control of telefones.controls;index as i" [appearance]="'outline'">
+                  <mat-label>Telefone</mat-label>
+                  <input matInput type="text" formControlName="{{i}}">
               </mat-form-field>
           </div>
+      </div>
+      <div fxLayoutAlign="end center" fxLayoutGap="16px" fxLayout="row">
+        <mat-card-subtitle class="no-margin">Telefone</mat-card-subtitle>
+        <button (click)="novoTelefone()" mat-icon-button>
+            <mat-icon>add</mat-icon>
+        </button>
+    </div>
+    </mat-card-content>
+  </mat-card>
+  <!--ENDEREÇOS-->
+  <mat-card class="card-form">
+    <mat-card-header>
+      <mat-card-title>Endereços</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <div fxLayout="column" formArrayName="enderecos">
+          <div *ngFor="let formEndereco of enderecos.controls;index as i" class="endereco" formGroupName="{{i}}">
+              <div class="endereco-title">Endereço</div>
+              <div fxLayout="row" fxLayoutGap="16px">
+                  <mat-form-field fxFlex [appearance]="'outline'">
+                      <mat-label>Cidade</mat-label>
+                      <input matInput type="text" formControlName="cidade">
+                      <mat-error>Campo obrigatório</mat-error>
+                  </mat-form-field>
 
-          <div fxLayout="row" fxLayoutGap="16px">
-              <mat-form-field fxFlex [appearance]="'outline'">
-                  <mat-label>Cabelo</mat-label>
-                  <input matInput type="text" formControlName="cabelo">
-                  <mat-error>Campo obrigatório</mat-error>
-              </mat-form-field>
+                  <mat-form-field fxFlex [appearance]="'outline'">
+                      <mat-label>Estado</mat-label>
+                      <input matInput type="text" formControlName="estado">
+                      <mat-error>Campo obrigatório</mat-error>
+                  </mat-form-field>
+              </div>
+              <div fxLayout="row" fxLayoutGap="16px">
+                  <mat-form-field fxFlex [appearance]="'outline'">
+                      <mat-label>Bairro</mat-label>
+                      <input matInput type="text" formControlName="bairro">
+                      <mat-error>Campo obrigatório</mat-error>
+                  </mat-form-field>
 
-              <mat-form-field fxFlex [appearance]="'outline'">
-                  <mat-label>Olho</mat-label>
-                  <input matInput type="text" formControlName="olho">
-                  <mat-error>Campo obrigatório</mat-error>
-              </mat-form-field>
-          </div>
-
-          <mat-card-subtitle>Acesso</mat-card-subtitle>
-
-          <div formGroupName="login" fxLayoutGap="16px">
-              <mat-form-field fxFlex [appearance]="'outline'">
-                  <mat-label>Email</mat-label>
-                  <input matInput email type="text" formControlName="email">
-                  <mat-error>E-mail inválido</mat-error>
-              </mat-form-field>
-
-              <mat-form-field fxFlex [appearance]="'outline'">
-                  <mat-label>Senha</mat-label>
-                  <input matInput type="password" formControlName="senha">
-                  <mat-error>Campo obrigatório</mat-error>
-              </mat-form-field>
-          </div>
-
-          <div fxLayoutAlign="start center" fxLayoutGap="16px" fxLayout="row">
-              <mat-card-subtitle class="no-margin">Telefones</mat-card-subtitle>
-              <button (click)="novoTelefone()" mat-icon-button>
-                  <mat-icon>add</mat-icon>
-              </button>
-          </div>
-
-          <div fxLayout="column" formArrayName="telefones">
-              <div class="grid-telefones">
-                  <mat-form-field *ngFor="let control of telefones.controls;index as i" [appearance]="'outline'">
-                      <mat-label>Telefone</mat-label>
-                      <input matInput type="text" formControlName="{{i}}">
+                  <mat-form-field [appearance]="'outline'">
+                      <mat-label>Número</mat-label>
+                      <input matInput type="number" formControlName="numero">
+                      <mat-error>Campo obrigatório</mat-error>
+                  </mat-form-field>
+              </div>
+              <div>
+                  <mat-form-field fxFlex [appearance]="'outline'">
+                      <mat-label>Rua</mat-label>
+                      <input matInput type="text" formControlName="rua">
+                      <mat-error>Campo obrigatório</mat-error>
                   </mat-form-field>
               </div>
           </div>
-
-          <div fxLayoutAlign="start center" fxLayoutGap="16px" fxLayout="row">
-              <mat-card-subtitle class="no-margin">Enderecos</mat-card-subtitle>
-              <button (click)="novoEndereco()" mat-icon-button>
-                  <mat-icon>add</mat-icon>
-              </button>
-          </div>
-
-          <div fxLayout="column" formArrayName="enderecos">
-              <div *ngFor="let formEndereco of enderecos.controls;index as i" class="endereco" formGroupName="{{i}}">
-                  <div class="endereco-title">Endereço</div>
-                  <div fxLayout="row" fxLayoutGap="16px">
-                      <mat-form-field fxFlex [appearance]="'outline'">
-                          <mat-label>Cidade</mat-label>
-                          <input matInput type="text" formControlName="cidade">
-                          <mat-error>Campo obrigatório</mat-error>
-                      </mat-form-field>
-
-                      <mat-form-field fxFlex [appearance]="'outline'">
-                          <mat-label>Estado</mat-label>
-                          <input matInput type="text" formControlName="estado">
-                          <mat-error>Campo obrigatório</mat-error>
-                      </mat-form-field>
-                  </div>
-                  <div fxLayout="row" fxLayoutGap="16px">
-                      <mat-form-field fxFlex [appearance]="'outline'">
-                          <mat-label>Bairro</mat-label>
-                          <input matInput type="text" formControlName="bairro">
-                          <mat-error>Campo obrigatório</mat-error>
-                      </mat-form-field>
-
-                      <mat-form-field [appearance]="'outline'">
-                          <mat-label>Número</mat-label>
-                          <input matInput type="number" formControlName="numero">
-                          <mat-error>Campo obrigatório</mat-error>
-                      </mat-form-field>
-                  </div>
-                  <div>
-                      <mat-form-field fxFlex [appearance]="'outline'">
-                          <mat-label>Rua</mat-label>
-                          <input matInput type="text" formControlName="rua">
-                          <mat-error>Campo obrigatório</mat-error>
-                      </mat-form-field>
-                  </div>
-              </div>
-          </div>
       </div>
-  </mat-card-content>
-  <mat-card-actions fxLayoutAlign="end start">
-      <button color="primary" mat-raised-button>Salvar</button>
-  </mat-card-actions>
-</mat-card>
+      <div fxLayoutAlign="end center" fxLayoutGap="16px" fxLayout="row">
+        <mat-card-subtitle class="no-margin">Endereço</mat-card-subtitle>
+        <button (click)="novoEndereco()" mat-icon-button>
+            <mat-icon>add</mat-icon>
+        </button>
+      </div>
+    </mat-card-content>
+  </mat-card>
+  <!--BOTÃO-->
+  <mat-card class="card-form">
+    <mat-card-actions fxLayoutAlign="end start">
+        <button color="primary" mat-raised-button>Salvar</button>
+    </mat-card-actions>
+  </mat-card>
+
+</div>
+
+
