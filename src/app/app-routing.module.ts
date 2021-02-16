@@ -10,7 +10,8 @@ const routes: Routes = [
     path: 'admin', component: AdminComponent,
     children: [
       { path: 'pessoa', loadChildren: () => import('./modules/pessoa/pessoa.module').then(m => m.PessoaModule) },
-      { path: 'dashboard', loadChildren: () => import('./modules/dashboard/dashboard.module').then(m => m.DashboardModule) }
+      { path: 'dashboard', loadChildren: () => import('./modules/dashboard/dashboard.module').then(m => m.DashboardModule) },
+      { path: 'empresa', loadChildren: () => import('./modules/empresa/empresa.module').then(m => m.EmpresaModule) }
     ]
   }
 ];
