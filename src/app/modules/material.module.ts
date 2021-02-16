@@ -21,7 +21,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { NgModule } from '@angular/core';
-import { DashboardComponent } from './dashboard/dashboard.component';
+import {MatAutocompleteModule} from '@angular/material/autocomplete';
 
 @NgModule({
   imports: [
@@ -46,7 +46,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     MatTabsModule,
     MatSortModule,
     MatToolbarModule,
-    MatSidenavModule
+    MatSidenavModule,
+    MatAutocompleteModule
   ],
   exports: [
     MatCardModule,
@@ -70,7 +71,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     MatTabsModule,
     MatSortModule,
     MatToolbarModule,
-    MatSidenavModule
+    MatSidenavModule,
+    MatAutocompleteModule
   ]
 })
 export class MaterialModule { }
