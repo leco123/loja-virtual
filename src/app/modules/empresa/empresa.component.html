@@ -1,0 +1,171 @@
+<div class="conteudo tela" [formGroup]="form">
+
+  <!--DADOS DA EMPRESA-->
+  <mat-card class="card-form">
+    <mat-card-header>
+        <mat-card-title>Dados da Empresa</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+        <div fxLayout="column" fxLayoutGap="16px">
+            <div fxLayout="column" fxLayoutGap="16px">
+                <mat-form-field fxFlex [appearance]="'outline'">
+                    <mat-label>Razão Social</mat-label>
+                    <input matInput type="text" formControlName="razaosocial">
+                    <mat-error>Campo obrigatório</mat-error>
+                </mat-form-field>
+
+                <mat-form-field [appearance]="'outline'">
+                    <mat-label>Nome Fantasia</mat-label>
+                    <input matInput type="text" formControlName="nomefantasia">
+                    <mat-error>Campo obrigatório</mat-error>
+                </mat-form-field>
+            </div>
+
+            <div fxLayout="row" fxLayoutGap="16px">
+                <mat-form-field fxFlex [appearance]="'outline'">
+                    <mat-label>CNPJ</mat-label>
+                    <input matInput type="number" formControlName="cnpj">
+                    <mat-error>Campo obrigatório</mat-error>
+                </mat-form-field>
+
+                <mat-form-field [appearance]="'outline'">
+                  <mat-label>Tipo</mat-label>
+                  <mat-select formControlName="tipo">
+                    <mat-option value="matriz">Matriz</mat-option>
+                    <mat-option value="filial">Filial</mat-option>
+                  </mat-select>
+                </mat-form-field>
+            </div>
+
+
+        </div>
+    </mat-card-content>
+  </mat-card>
+  <!--CONTATOS-->
+  <mat-card class="card-form">
+    <mat-card-header>
+      <mat-card-title>Contatos</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <div fxLayoutAlign="start center" fxLayoutGap="16px" fxLayout="row">
+        <mat-card-subtitle class="no-margin">Telefones</mat-card-subtitle>
+        <button (click)="novoTelefone()" mat-icon-button>
+            <mat-icon>add</mat-icon>
+        </button>
+      </div>
+
+      <div fxLayout="column" formArrayName="telefones">
+        <div class="grid-telefones">
+          <div class="" *ngFor="let control of telefones.controls;index as i" >
+            <mat-form-field [appearance]="'outline'">
+              <mat-label>Telefone</mat-label>
+              <input matInput type="text" formControlName="{{i}}">
+            </mat-form-field>
+            <mat-form-field [appearance]="'outline'">
+              <mat-label>Tipo</mat-label>
+              <mat-select>
+                <mat-option value="EMPRESA">Empresa</mat-option>
+                <mat-option value="CELULAR">Celular</mat-option>
+                <mat-option value="RESIDENCIA">Residêncial</mat-option>
+              </mat-select>
+            </mat-form-field>
+            <mat-form-field [appearance]="'outline'">
+              <mat-label>Principal</mat-label>
+              <mat-select>
+                <mat-option value="NAO">Não</mat-option>
+                <mat-option value="SIM">Sim</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+        </div>
+    </div>
+    </mat-card-content>
+  </mat-card>
+  <!--ENDEREÇOS-->
+  <mat-card class="card-form">
+    <mat-card-header>
+      <mat-card-title>Endereços</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <!--BOTÃO DE ADICIONAR ENDEREÇO-->
+      <div fxLayoutAlign="start center" fxLayoutGap="16px" fxLayout="row">
+        <mat-card-subtitle class="no-margin">Enderecos</mat-card-subtitle>
+        <button (click)="novoEndereco()" mat-icon-button>
+            <mat-icon>add</mat-icon>
+        </button>
+      </div>
+      <!--CAMPOS DE ENDEREÇO-->
+      <div fxLayout="column" formArrayName="enderecos">
+        <div *ngFor="let formEndereco of enderecos.controls;index as i" class="endereco" formGroupName="{{i}}">
+            <div fxLayout="row" fxLayoutGap="16px">
+                <mat-form-field fxFlex [appearance]="'outline'">
+                    <mat-label>Cidade</mat-label>
+                    <input matInput type="text" formControlName="cidade">
+                    <mat-error>Campo obrigatório</mat-error>
+                </mat-form-field>
+
+                <mat-form-field fxFlex [appearance]="'outline'">
+                    <mat-label>Estado</mat-label>
+                    <input matInput type="text" formControlName="estado">
+                    <mat-error>Campo obrigatório</mat-error>
+                </mat-form-field>
+            </div>
+            <div fxLayout="row" fxLayoutGap="16px">
+                <mat-form-field fxFlex [appearance]="'outline'">
+                    <mat-label>Bairro</mat-label>
+                    <input matInput type="text" formControlName="bairro">
+                    <mat-error>Campo obrigatório</mat-error>
+                </mat-form-field>
+
+                <mat-form-field [appearance]="'outline'">
+                    <mat-label>Número</mat-label>
+                    <input matInput type="number" formControlName="numero">
+                    <mat-error>Campo obrigatório</mat-error>
+                </mat-form-field>
+            </div>
+            <div>
+                <mat-form-field fxFlex [appearance]="'outline'">
+                    <mat-label>Rua</mat-label>
+                    <input matInput type="text" formControlName="rua">
+                    <mat-error>Campo obrigatório</mat-error>
+                </mat-form-field>
+            </div>
+        </div>
+    </div>
+    </mat-card-content>
+  </mat-card>
+  <!--INSCRIÇÕES-->
+  <mat-card class="card-form">
+    <mat-card-header>
+      <mat-card-title>Inscrições</mat-card-title>
+      <mat-card-subtitle>Neste agrupamento de campos informe os campos de Inscrições federal, estadual e municipal:</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <div  fxLayoutGap="16px">
+          <mat-form-field fxFlex [appearance]="'outline'">
+              <mat-label>Inscrição Federal</mat-label>
+              <input matInput email type="number" formControlName="inscricaofederal">
+              <mat-error>E-mail inválido</mat-error>
+          </mat-form-field>
+
+          <mat-form-field fxFlex [appearance]="'outline'">
+              <mat-label>Inscrição Estadual </mat-label>
+              <input matInput type="number" formControlName="inscricaoestadual">
+              <mat-error>Campo obrigatório</mat-error>
+          </mat-form-field>
+
+          <mat-form-field fxFlex [appearance]="'outline'">
+            <mat-label>Inscrição Municipal </mat-label>
+            <input matInput type="number" formControlName="incsricaomuniciapl">
+            <mat-error>Campo obrigatório</mat-error>
+        </mat-form-field>
+      </div>
+    </mat-card-content>
+  </mat-card>
+  <!--BOTÃO SALVAR-->
+  <mat-card>
+    <mat-card-actions fxLayoutAlign="end start">
+      <button color="primary" mat-raised-button>Salvar</button>
+    </mat-card-actions>
+  </mat-card>
+</div>
