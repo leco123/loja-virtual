@@ -6,20 +6,20 @@
       <span>SG-Loja Virtual</span>
       <span class="barra-espaco"></span>
       <button mat-button [matMenuTriggerFor]="menu">
-        <mat-icon>account_circle</mat-icon> Minha Conta - Alex de Carvalho
+        <mat-icon>account_circle</mat-icon>Alex de Carvalho
       </button>
       <mat-menu #menu="matMenu">
-        <button mat-menu-item>
-          <mat-icon>dialpad</mat-icon>
-          <span>Redial</span>
-        </button>
-        <button mat-menu-item disabled>
-          <mat-icon>voicemail</mat-icon>
-          <span>Check voice mail</span>
+        <button mat-menu-item [routerLink]="['/admin/pessoa']" routerLinkActive="link-activated">
+          <mat-icon>person</mat-icon>
+          <span>Minha Conta</span>
         </button>
         <button mat-menu-item>
-          <mat-icon>notifications_off</mat-icon>
-          <span>Disable alerts</span>
+          <mat-icon>mail</mat-icon>
+          <span>E-mail</span>
+        </button>
+        <button mat-menu-item>
+          <mat-icon>notifications</mat-icon>
+          <span>Notificações</span>
         </button>
       </mat-menu>
   </mat-toolbar>
@@ -38,7 +38,7 @@
               <mat-list-item>
                   <a matLine class="link" [routerLink]="['/admin/pessoa']" routerLinkActive="link-activated">
                       <mat-icon>person</mat-icon>
-                      <span>Pessoa</span>
+                      <span>Minha Conta</span>
                   </a>
               </mat-list-item>
               <mat-list-item>
