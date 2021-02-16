@@ -5,7 +5,8 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
-
+.no-margin{margin: 0!important;}
+.card-subtitle {display: block; width: 100%;clear: both;}
 .conteudo {margin-top: 2%;}
 .card-form {margin-bottom: 2%;}
 .mat-form-field { margin-left: 16px;}
