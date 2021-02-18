@@ -1,0 +1,23 @@
+<mat-card class="card-form">
+  <mat-card-header>
+    <mat-card-title>Lista de Categorias</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+
+    <mat-list>
+      <div mat-subheader>Categorias</div>
+      <mat-list-item *ngFor="let categoria of dataSource" class="lista-categoria">
+        <mat-icon mat-list-icon>folder</mat-icon>
+        <div mat-line>
+          <strong>{{categoria.codigo}}-{{categoria.nome}} </strong> ordem: {{categoria.ordem}}
+          <span justify="end"><button mat-button color="primary" >Editar</button></span>
+          <span justify="end"><button mat-button color="warn">deletar</button></span>
+        </div>
+      </mat-list-item>
+    </mat-list>
+
+    <!--<p>
+      Selecionado: {{shoes.selectedOptions.selected[0]?.value}}
+    </p>-->
+  </mat-card-content>
+</mat-card>

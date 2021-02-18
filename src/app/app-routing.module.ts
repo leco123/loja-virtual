@@ -11,7 +11,8 @@ const routes: Routes = [
     children: [
       { path: 'pessoa', loadChildren: () => import('./modules/pessoa/pessoa.module').then(m => m.PessoaModule) },
       { path: 'dashboard', loadChildren: () => import('./modules/dashboard/dashboard.module').then(m => m.DashboardModule) },
-      { path: 'empresa', loadChildren: () => import('./modules/empresa/empresa.module').then(m => m.EmpresaModule) }
+      { path: 'empresa', loadChildren: () => import('./modules/empresa/empresa.module').then(m => m.EmpresaModule) },
+      { path: 'produto', loadChildren: () => import('./modules/produto/produto.module').then(m => m.ProdutoModule) }
     ]
   }
 ];
