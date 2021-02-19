@@ -1,8 +1,6 @@
 <div class="background-login">
 
-  <div class="ilustracao">
-
-  </div>
+  <div class="ilustracao"></div>
 
   <div class="form-login">
 
@@ -33,8 +31,10 @@
 
         </mat-card-content>
         <mat-card-actions align="end">
-            <button color="primary" mat-button>Entrar</button>
+            <button mat-button  (click)="cadastrar()">Cadastre-se</button>
+            <button [disabled]="form.invalid" color="primary" mat-button (click)="login()">Entrar</button>
         </mat-card-actions>
+        <mat-error *ngIf="mensagemError !== '' ">{{mensagemError}}</mat-error>
       </mat-card>
     </form>
 

@@ -1,5 +1,7 @@
+import { AuthService } from './../../services/auth.service';
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -8,14 +10,46 @@ import { FormControl, FormGroup } from '@angular/forms';
 })
 export class LoginComponent implements OnInit {
 
-  constructor() { }
+  public mensagemError: string = '';
+  public form: FormGroup;
 
-  public form: FormGroup = new FormGroup({
-    email: new FormControl(),
-    senha: new FormControl(),
-  });
+  constructor(
+    private router: Router,
+    private auth: AuthService,
+    private formBuilder: FormBuilder
+  ) {
+    this.form = this.formBuilder.group({
+      email: [null, Validators.compose([
+        Validators.required,
+        Validators.email
+      ])],
+      senha: [null, Validators.required]
+    });
+  }
 
   ngOnInit(): void {
+  }
+
+
+  public login() {
+    this.auth.logar(this.form.value).subscribe((resposta:  any) =>{
+        console.log(resposta);
+        this.auth.token = resposta.data.token;
+        this.mensagemError = '';
+        this.router.navigateByUrl('admin');
+        return;
+    },
+    error =>{
+      console.log(error);
+      this.mensagemError = error.error.message;
+      setTimeout(() => {
+        this.mensagemError = '';
+      }, 5000);
+    });
+  }
+
+  public cadastrar(): void {
+    this.router.navigateByUrl('cadastrar');
   }
 
 }
