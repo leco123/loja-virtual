@@ -5,8 +5,9 @@
 }
 
 .ilustracao {
-  flex-grow: 2.2;
+  flex-grow: 5;
   background-image: url('../../../assets/ilustracao-login.png');
+  background-position: bottom;
 
 }
 
@@ -22,7 +23,7 @@
 }
 
 .login-container {
-  width: 80%;
+  width: 350px;
 }
 
 .cmp-login {

@@ -1,3 +1,4 @@
+import { CadastrarComponent } from './pages/cadastrar/cadastrar.component';
 import { AdminComponent } from './pages/admin/admin.component';
 import { LoginComponent } from './pages/login/login.component';
 import { NgModule } from '@angular/core';
@@ -6,6 +7,7 @@ import { Routes, RouterModule } from '@angular/router';
 const routes: Routes = [
   {path: '', redirectTo: 'login', pathMatch: 'full' },
   { path: 'login', component: LoginComponent},
+  { path: 'cadastrar', component: CadastrarComponent},
   {
     path: 'admin', component: AdminComponent,
     children: [

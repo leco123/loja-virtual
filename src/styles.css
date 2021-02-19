@@ -31,3 +31,36 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 ::-webkit-scrollbar-thumb:hover {
   background: #673ab7;
 }
+
+.auth-container {
+  width: 100%;
+  height: 100%;
+  background-image: url('assets/ilustracao-login.png');
+  display: flex;
+  justify-content: center;
+  background-position: bottom;
+}
+.auth-container mat-card {
+  margin-top: 5%;
+  height: 400px;
+  display: flex;
+}
+
+.auth-container mat-card-field {
+  width: 100%;
+  max-width: 500px;
+}
+
+.auth-container mat-form-field{
+  width: 100%;
+  margin-bottom: 16px;
+}
+
+.auth-container mat-card-content{
+  padding-top: 32px;
+}
+
+.auth-container mat-card-actions{
+  display: flex;
+  justify-content: flex-end;
+}

@@ -1,3 +1,4 @@
+import { HttpClientModule } from '@angular/common/http';
 import { MaterialModule } from './modules/material.module';
 
 import { NgModule } from '@angular/core';
@@ -10,12 +11,14 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './pages/login/login.component';
 import { AdminComponent } from './pages/admin/admin.component';
+import { CadastrarComponent } from './pages/cadastrar/cadastrar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    AdminComponent
+    AdminComponent,
+    CadastrarComponent
   ],
   imports: [
     BrowserModule,
@@ -23,7 +26,8 @@ import { AdminComponent } from './pages/admin/admin.component';
     BrowserAnimationsModule,
     FormsModule,
     ReactiveFormsModule,
-    MaterialModule
+    MaterialModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

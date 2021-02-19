@@ -1,0 +1,33 @@
+.cadastro-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  background-color: #f1f1f1;
+
+}
+
+.form-cadastro {
+  margin-top: 5%;
+  display: flex;
+  width: 450px;
+
+}
+
+.cadastro {
+  width: 100%;
+  background-color: #faf8fdf7;
+  box-shadow: none;
+  flex-flow: column;
+  padding: 2%;
+  height: 550px;
+}
+.cmp {
+  width: 90%;
+}
+.clear {
+  width: 100%;
+  display: block;
+  clear: both;
+  height: 1px;
+}
