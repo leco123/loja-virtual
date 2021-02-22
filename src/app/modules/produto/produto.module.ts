@@ -8,6 +8,8 @@ import { ItemComponent } from './item/item.component';
 import { ProdutoComponent } from './produto.component';
 import { FormCategoriaComponent } from './categoria/form-categoria/form-categoria.component';
 import { GridCategoriaComponent } from './categoria/grid-categoria/grid-categoria.component';
+import { FormItemComponent } from './item/form-item/form-item.component';
+import { GridItemComponent } from './item/grid-item/grid-item.component';
 
 
 @NgModule({
@@ -18,7 +20,9 @@ import { GridCategoriaComponent } from './categoria/grid-categoria/grid-categori
     ItemComponent,
     ProdutoComponent,
     FormCategoriaComponent,
-    GridCategoriaComponent
+    GridCategoriaComponent,
+    FormItemComponent,
+    GridItemComponent
   ],
   imports: [
     CommonModule,
