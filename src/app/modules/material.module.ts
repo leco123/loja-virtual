@@ -21,8 +21,9 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { NgModule } from '@angular/core';
-import {MatAutocompleteModule} from '@angular/material/autocomplete';
-
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatPaginatorModule } from '@angular/material/paginator';
 @NgModule({
   imports: [
     MatCardModule,
@@ -47,7 +48,9 @@ import {MatAutocompleteModule} from '@angular/material/autocomplete';
     MatSortModule,
     MatToolbarModule,
     MatSidenavModule,
-    MatAutocompleteModule
+    MatAutocompleteModule,
+    MatProgressSpinnerModule,
+    MatPaginatorModule
   ],
   exports: [
     MatCardModule,
@@ -72,7 +75,9 @@ import {MatAutocompleteModule} from '@angular/material/autocomplete';
     MatSortModule,
     MatToolbarModule,
     MatSidenavModule,
-    MatAutocompleteModule
+    MatAutocompleteModule,
+    MatProgressSpinnerModule,
+    MatPaginatorModule
   ]
 })
 export class MaterialModule { }

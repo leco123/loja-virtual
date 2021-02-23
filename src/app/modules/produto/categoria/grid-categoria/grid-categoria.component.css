@@ -1,7 +1,12 @@
+table {
+  width: 100%;
+}
+
 .tabela-categoria {
   width: 100%!important;
   border-spacing: 0;
 }
+
 .tela{
   width: 100%;
   max-width: 800px;
