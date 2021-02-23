@@ -7,7 +7,12 @@ html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .no-margin{margin: 0!important;}
 .card-subtitle {display: block; width: 100%;clear: both;}
-.conteudo {margin-top: 2%;}
+.conteudo {margin-top: 2%!important;}
+.tela{
+  width: 100%!important;
+  max-width: 800px!important;
+  margin: 16px auto!important;
+}
 .card-form {margin-bottom: 2%;}
 .mat-form-field { margin-left: 16px;}
 .card-btns {margin-top: 2%;}
@@ -64,3 +69,8 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   display: flex;
   justify-content: flex-end;
 }
+
+.cmp-width-full {
+  width: 95%!important;
+}
+
