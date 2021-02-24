@@ -1,3 +1,4 @@
+
 import { HttpClientModule } from '@angular/common/http';
 import { MaterialModule } from './modules/material.module';
 
@@ -16,12 +17,14 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { environment } from '../environments/environment';
 
+import { ErrorPipe } from './modules/pipe/error.pipe';
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     AdminComponent,
-    CadastrarComponent
+    CadastrarComponent,
+    ErrorPipe
   ],
   imports: [
     BrowserModule,

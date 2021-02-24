@@ -8,7 +8,7 @@ import { Validators, FormGroup, FormControl, FormArray, FormBuilder } from '@ang
 })
 export class PessoaComponent implements OnInit {
 
-  public form: FormGroup;
+  public form: FormGroup = new FormGroup({});
 
   constructor(private fb: FormBuilder) {
     this.criarForm();

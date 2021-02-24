@@ -16,7 +16,7 @@ export class GridItemComponent implements OnInit, AfterViewInit  {
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
 
-  constructor() { }
+  constructor() {}
 
   ngOnInit(): void {
   }
