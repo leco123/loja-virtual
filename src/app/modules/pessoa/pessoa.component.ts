@@ -1,3 +1,5 @@
+import { Pessoa } from './../models/pessoa';
+import { PessoaService } from './pessoa.service';
 import { Component, OnInit } from '@angular/core';
 import { Validators, FormGroup, FormControl, FormArray, FormBuilder } from '@angular/forms';
 
@@ -8,10 +10,14 @@ import { Validators, FormGroup, FormControl, FormArray, FormBuilder } from '@ang
 })
 export class PessoaComponent implements OnInit {
 
-  public form: FormGroup = new FormGroup({});
+  public form: FormGroup;
+  public pessoa: Pessoa = <Pessoa>{};
 
-  constructor(private fb: FormBuilder) {
-    this.criarForm();
+  constructor(
+      private fb: FormBuilder,
+      private pessoaService: PessoaService
+    ) {
+      this.criarForm();
   }
 
   ngOnInit() {
@@ -23,8 +29,10 @@ export class PessoaComponent implements OnInit {
       idade: [null],
       olho: [],
       cabelo: [],
-      telefones: new FormArray([new FormControl()]),
-      enderecos: this.fb.array([ // retorna um FormArray
+      telefones:  this.fb.array([
+        this.criarFormTelefone()
+      ]),
+      enderecos: this.fb.array([
         this.criarFormEndereco()
       ]),
       login: this.fb.group({
@@ -43,7 +51,11 @@ export class PessoaComponent implements OnInit {
   }
 
   public novoTelefone() {
-    this.telefones.push(new FormControl());
+    this.telefones.push(this.criarFormTelefone());
+  }
+
+  public criarFormTelefone(): FormControl {
+    return new FormControl();
   }
 
   public novoEndereco() {
@@ -58,6 +70,26 @@ export class PessoaComponent implements OnInit {
       rua: [],
       numero: []
     });
+  }
+
+  public salvar(): void {
+      this.pessoa = this.form.value;
+      this.pessoa.id = '0245245sdasddas';
+
+      if (!this.form.valid) {
+        console.error('validação pessoa', this.form.valid);
+        console.log('pessoa: ', this.pessoa);
+      } else {
+        console.log(this.pessoaService.inserir(this.pessoa));
+      }
+  }
+
+  public carregarDadosPessoa() {
+
+  }
+
+  public pesquisarPessoa() {
+
   }
 
 }

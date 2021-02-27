@@ -1,4 +1,4 @@
-<div [formGroup]="form"  class="conteudo tela">
+<form [formGroup]="form"  class="conteudo tela" (ngSubmit)="salvar()">
   <!--DADOS PESSOAIS-->
   <mat-card class="card-form">
     <mat-card-header>
@@ -73,7 +73,7 @@
       </div>
       <div fxLayoutAlign="end center" fxLayoutGap="16px" fxLayout="row">
         <mat-card-subtitle class="no-margin">Telefone</mat-card-subtitle>
-        <button (click)="novoTelefone()" mat-icon-button>
+        <button type="menu" (click)="novoTelefone()" mat-icon-button>
             <mat-icon>add</mat-icon>
         </button>
     </div>
@@ -134,10 +134,10 @@
   <!--BOTÃO-->
   <mat-card class="card-form">
     <mat-card-actions fxLayoutAlign="end start">
-        <button color="primary" mat-raised-button>Salvar</button>
+        <button type="submit" color="primary" mat-raised-button>Salvar</button>
     </mat-card-actions>
   </mat-card>
 
-</div>
+</form>
 
 

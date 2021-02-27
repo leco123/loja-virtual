@@ -1,9 +1,11 @@
+import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { SenhaValidator } from './../../validators/senha-validator';
 import { AuthService } from './../../services/auth.service';
 import { Router } from '@angular/router';
 import { ConfirmarSenhaValidator } from './../../validators/confirmar-senha-validator';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { Component, OnInit } from '@angular/core';
+
+
 
 @Component({
   selector: 'app-cadastrar',
@@ -13,7 +15,7 @@ import { Component, OnInit } from '@angular/core';
 export class CadastrarComponent implements OnInit {
   public mensagemError: string = '';
   public form: FormGroup;
-  public loading: Boolean = false;
+  public loading: boolean = false;
 
   constructor(
     private formBuilder: FormBuilder,
