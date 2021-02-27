@@ -1,3 +1,5 @@
+import { PessoaService } from './modules/pessoa/pessoa.service';
+
 import { HttpClientModule } from '@angular/common/http';
 import { MaterialModule } from './modules/material.module';
 
@@ -16,12 +18,16 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { environment } from '../environments/environment';
 
+import { ErrorPipe } from './modules/pipe/error.pipe';
+import { CrudComponent } from './components/crud/crud.component';
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     AdminComponent,
-    CadastrarComponent
+    CadastrarComponent,
+    ErrorPipe,
+    CrudComponent
   ],
   imports: [
     BrowserModule,
@@ -35,6 +41,7 @@ import { environment } from '../environments/environment';
     AngularFireDatabaseModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  exports: [CrudComponent]
 })
 export class AppModule { }

@@ -21,12 +21,17 @@
             <input matInput placeholder="Nome do Item"  type="text">
           </mat-form-field>
 
-          <mat-form-field fxFlex [appearance]="'outline'">
+          <mat-form-field fxFlex [appearance]="'outline'" class="form-input-item">
             <mat-label>Preço</mat-label>
             <input matInput placeholder="Preço R$ 0.00"  type="number">
           </mat-form-field>
 
-          <mat-form-field fxFlex [appearance]="'outline'">
+          <mat-form-field fxFlex [appearance]="'outline'" class="form-input-item">
+            <mat-label>Quantidade Disponível</mat-label>
+            <input matInput placeholder="1"  type="number">
+          </mat-form-field>
+
+          <mat-form-field fxFlex [appearance]="'outline'" class="form-input-item">
             <mat-label>Categoria do Item</mat-label>
             <mat-select [(value)]="select">
               <mat-option>None</mat-option>
@@ -41,9 +46,9 @@
 
       <div>
         <mat-form-field class="cmp-width-full" fxFlex [appearance]="'outline'">
-          <mat-label>Descrição do Produto</mat-label>
+          <mat-label>Descreva informações técnicas referente ao produto...</mat-label>
           <textarea #message maxlength="256"
-                    matInput placeholder="Descreva aqui inforações do item"
+                    matInput placeholder="Descreva aqui inforações do item..."
                     rows = "10"></textarea>
           <mat-hint align="start"><strong>Descreva informações do item</strong> </mat-hint>
           <mat-hint align="end">{{message.value.length}} / 256</mat-hint>

@@ -10,7 +10,7 @@
           <mat-form-field [appearance]="'fill'" class="cmp">
             <mat-label>Nome Completo</mat-label>
             <input matInput formControlName="nome" required placeholder="Nome Completo" type="text" required>
-            <mat-error>Nome Completo obrigatório</mat-error>
+            <mat-error>{{nome?.errors | erro}}</mat-error>
           </mat-form-field>
         </p>
 
@@ -18,7 +18,7 @@
           <mat-form-field [appearance]="'fill'" class="cmp">
             <mat-label>E-mail</mat-label>
             <input matInput formControlName="email" required placeholder="seu@email.com" type="email" required>
-            <mat-error>Email obrigatório</mat-error>
+            <mat-error>{{email?.errors | erro}}</mat-error>
           </mat-form-field>
         </p>
 
@@ -26,20 +26,20 @@
           <mat-form-field [appearance]="'fill'" class="cmp">
             <mat-label>Senha</mat-label>
             <input matInput type="password" formControlName="senha" required>
-            <mat-error>Senha obrigatória</mat-error>
+            <mat-error>{{senha?.errors | erro}}</mat-error>
           </mat-form-field>
         </p>
 
         <p>
           <mat-form-field [appearance]="'fill'" class="cmp">
             <mat-label>Confirmar Senha</mat-label>
-            <input matInput type="password" formControlName="senha" required>
-            <mat-error>Confirmar Senha obrigatória</mat-error>
+            <input matInput type="password" formControlName="confirmarSenha" required>
+            <mat-error>{{confirmarSenha?.errors | erro }}</mat-error>
           </mat-form-field>
         </p>
       </mat-card-content>
       <mat-card-actions>
-        <button  color="primary" mat-button [disabled]="form.invalid">Cadastrar-se</button>
+        <button  color="primary" mat-button [disabled]="form.invalid" (click)="cadastrar()">Cadastrar-se</button>
       </mat-card-actions>
       <mat-error *ngIf="mensagemError">{{mensagemError}}</mat-error>
     </mat-card>

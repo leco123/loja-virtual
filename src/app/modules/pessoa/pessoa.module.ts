@@ -1,3 +1,4 @@
+import { PessoaService } from './pessoa.service';
 import { PessoaComponent } from './pessoa.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -16,6 +17,7 @@ import { MaterialModule } from './../material.module';
     FormsModule,
     FlexLayoutModule,
     MaterialModule
-  ]
+  ],
+  providers: [PessoaService]
 })
 export class PessoaModule { }
